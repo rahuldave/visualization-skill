@@ -24,6 +24,18 @@ The folder `books/` holds copies of the books that the skill uses, and the autho
 ignores the folder. The books are under copyright, so never commit them, publish them or copy long passages
 from them. The summary of the book stays in `books/` while the author adds notes to it.
 
+## Read the summary on a phone
+
+`just serve-books` shows the Markdown pages of `books/` as web pages on the tailnet of the machine. A
+tailnet is the private network that Tailscale makes between your own devices. Add a port number to change
+the port from 8765. Press Ctrl-C to stop the server.
+
+- The server needs `pandoc`, and Tailscale must be running.
+- Every device on the tailnet can read the pages. Nothing outside the tailnet can reach them.
+- The server makes the pages in `books/site/`, which Git ignores. You can delete the folder at any time.
+- A page is made again within 3 seconds when its Markdown changes.
+- The server sends only HTML pages and PNG figures, so it never sends the book.
+
 ## Related work
 
 - **[nossaifd-talks](https://github.com/rahuldave/nossaifd-talks)** holds the guide for talks. Its rules 66

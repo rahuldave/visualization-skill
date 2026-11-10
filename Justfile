@@ -61,3 +61,7 @@ check:
     just books-check --history
     just test
     just prose
+
+# Serve the Markdown pages of the books folder as HTML on this machine's tailnet address, for reading on a phone
+serve-books port="8765":
+    bash scripts/serve_books.sh "$1"
